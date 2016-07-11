@@ -13,9 +13,10 @@
 </head>
 
 <body>
-    <div class="container">
-        <div ng-include="'app/common/navbar.html'"></div>
-        <div ng-include="'app/home/home.html'"></div>
+    <div class="container" ng-controller="mainCtrl">
+        <div ng-include="navBarUrl"></div>
+        <div ng-include="contentUrl"></div>
+
     </div>
     <!--home module begins-->
     <script src="app/home/home.js"></script>
