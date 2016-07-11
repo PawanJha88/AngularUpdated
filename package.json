@@ -4,7 +4,10 @@
   "description": "this app is super for latest trends",
   "main": "server.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-webserver": "^0.9.1"
+  },
   "scripts": {
     "test": "gulp serve"
   },
