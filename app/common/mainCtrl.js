@@ -9,6 +9,8 @@ angular.module("flipzon")
                 $scope.contentUrl = "app/login/login.html"
             } else if (name == "register") {
                 $scope.contentUrl = "app/register/register.html"
+            } else if (name == "users") {
+                $scope.contentUrl = "app/users/users.html"
             } else {
                 $scope.contentUrl = "app/home/home.html";
             }
