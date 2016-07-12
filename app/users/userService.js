@@ -1,5 +1,5 @@
 angular.module("users")
-    .service("userService", [function () {
+    .service("userService", ["$http", "$q", function ($http, $q) {
 
         this.getUsers = function () {
             return [
@@ -89,6 +89,23 @@ angular.module("users")
                     "about": "Sunt quis commodo ipsum sit anim sint aliqua consectetur. Ex consectetur laborum quis officia cillum elit veniam ipsum officia exercitation aliquip consectetur. Adipisicing ad ad esse excepteur esse id minim do magna culpa non id.\r\n"
   }
 ];
-        }
+        };
+        var userData;
+        this.getUsersFromJson = function () {
+            var dfd = $q.defer();
+            if (userData) {
+                dfd.resolve(userData);
+            } else {
+                $http.get("app/data/users.json")
+                    .then(function (response) {
+                        userData = response;
+                        dfd.resolve(userData);
+                    }).catch(function (errorResponse) {
+                        dfd.reject("Error Ouccred");
+                    });
+            }
+            return dfd.promise;
+
+        };
 
 }]);

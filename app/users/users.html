@@ -1,5 +1,6 @@
 <div ng-controller="usersCtrl">
-    <table class="table table-hover">
+
+    <table class="table table-hover" ng-if="!errorDisplay">
         <thead>
             <tr>
                 <th>Row</th>
@@ -17,4 +18,7 @@
             </tr>
         </tbody>
     </table>
+    <div ng-if="errorDisplay">
+        <label class="lbl-dange badge">Error Occurred Please try again.</label>
+    </div>
 </div>
