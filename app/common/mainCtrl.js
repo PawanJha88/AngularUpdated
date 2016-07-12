@@ -16,4 +16,17 @@ angular.module("flipzon")
             }
         };
 
+
+
+
+        $scope.$watch("companyName", function (newVal, oldVal) {
+            console.log(newVal);
+            console.log(oldVal);
+        });
+
+
+
+
+
+
     }]);

@@ -1,6 +1,11 @@
 <div ng-controller="usersCtrl">
 
-    <table class="table table-hover" ng-if="!errorDisplay">
+    <div custom-table heading="{{tableName}}" tabledata="users"></div>
+
+
+    <h1>inside the main page</h1>
+    <h1><input type="text" ng-model="tableName"></h1>
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th>Row</th>
@@ -10,15 +15,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in users">
-                <td>{{$index+1}}</td>
-                <td>{{item.name}}</td>
-                <td>{{item.gender}}</td>
-                <td>{{item.company}}</td>
+            <tr ng-repeat="user in users">
+                <td>{{$index}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.gender}}</td>
+                <td>
+                    <input type="text" ng-model="user.company">
+                </td>
             </tr>
         </tbody>
     </table>
-    <div ng-if="errorDisplay">
-        <label class="lbl-dange badge">Error Occurred Please try again.</label>
-    </div>
+
 </div>
