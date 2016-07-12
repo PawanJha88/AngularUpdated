@@ -3,8 +3,10 @@
         <label for="inputEmail" class="control-label col-xs-2">First Name</label>
         <div class="col-xs-4">
 
-            <input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="user.firstName" required ng-minlength="4">
+            <input type="text" class="form-control" placeholder="First Name" name="firstName" ng-model="user.firstName" required ng-minlength="4" ng-pattern="/^[A-Za-z. ]+$/">
 
+
+            <span ng-show="registerForm.firstName.$error.pattern &&registerForm.firstName.$dirty">Invalid First Name </span>
             <span ng-show="registerForm.firstName.$error.required &&registerForm.firstName.$dirty">First Name Required</span>
             <span ng-show="registerForm.firstName.$error.minlength &&registerForm.firstName.$dirty">First Name should be minimum of 4 characters</span>
 
