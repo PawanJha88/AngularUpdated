@@ -14,7 +14,8 @@
 
 <body>
     <div class="container" ng-controller="mainCtrl">
-        <div ng-include="navBarUrl"></div>
+        <!-- <div ng-include="navBarUrl"></div>-->
+        <div header-bar></div>
         <div ng-include="contentUrl"></div>
 
     </div>
@@ -36,6 +37,8 @@
 
     <script src="app/components/components.js"></script>
     <script src="app/components/brandIcon.js"></script>
+
+    <script src="app/components/ngAlphbets.js"></script>
     <script src="app/app.js"></script>
     <script src="app/common/mainCtrl.js"></script>
 </body>
