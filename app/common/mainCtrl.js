@@ -1,5 +1,16 @@
 angular.module("flipzon")
     .controller("mainCtrl", ["$scope", function ($scope) {
+
+        $scope.searchBox = "";
+
+        setTimeout(function () {
+            $scope.searchBox = "Hey i am updated";
+            $scope.$apply();
+        }, 5000);
+
+        $scope.$watch("searchBox", function (newVal, oldVal) {
+            console.log(newVal);
+        });
         $scope.companyName = "FlipZon";
         $scope.navBarUrl = 'app/common/navbar.html';
         $scope.contentUrl = "app/home/home.html";

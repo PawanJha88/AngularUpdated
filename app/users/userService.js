@@ -100,8 +100,8 @@ angular.module("users")
                     .then(function (response) {
                         userData = response;
                         dfd.resolve(userData);
-                    }).catch(function (errorResponse) {
-                        dfd.reject("Error Ouccred");
+                    }).catch(function (errorResponse, data) {
+                        dfd.resolve(errorResponse);
                     });
             }
             return dfd.promise;

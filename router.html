@@ -1,0 +1,52 @@
+<html ng-app="flipzon">
+
+<head>
+    <title>FlipZon</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <script src="bower_components/jquery/jquery.js">
+
+
+    </script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="mainCtrl">
+        <a ui-sref="home">Home</a>
+        <a ui-sref="login">Login</a>
+        <a ui-sref="users">Users</a>
+        <a ui-sref="register">Register</a>
+        <div ui-view></div>
+
+    </div>
+
+    <!--home module begins-->
+    <script src="app/home/home.js"></script>
+    <script src="app/home/homeCtrl.js"></script>
+    <!--homd module end-->
+
+    <script src="app/register/register.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
+
+    <!--users module begins-->
+    <script src="app/users/users.js"></script>
+    <script src="app/users/userService.js"></script>
+    <script src="app/users/usersCtrl.js"></script>
+    <!--End of Users Module-->
+
+
+    <script src="app/components/components.js"></script>
+    <script src="app/components/brandIcon.js"></script>
+
+    <script src="app/components/ngAlphbets.js"></script>
+    <script src="app/components/customTable.js"></script>
+    <script src="app/components/greaterThan.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/common/mainCtrl.js"></script>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 angular.module("home")
-    .controller("homeCtrl", ["$scope", "$rootScope", function ($scope, $rootScope) {
+    .controller("homeCtrl", ["$scope", "$rootScope", "$state", function ($scope, $rootScope, $state) {
 
+        console.log($state.params);
         $scope.addToCart = function (product) {
             $rootScope.$broadcast("PRODUCTADDED", {
                 item: product
@@ -65,3 +66,4 @@ angular.module("home")
                 description: "Awesome dress"
         }];
 }]);
+
