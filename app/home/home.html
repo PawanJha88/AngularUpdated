@@ -1,18 +1,33 @@
 <h1>Home Page</h1>
 <div ng-controller="homeCtrl">
+    <div class="row">
+        <div class="col-sm-2">
+            <input type="text" class="form-control" ng-model="searchByPrice" placeholder="Search By Price">
+        </div>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" ng-model="searchByCategory" placeholder="Search By Category">
+        </div>
+        <div class="col-sm-2">
+            <input type="checkbox" ng-model="sortByPrice">Sort By Price
+        </div>
 
+    </div>
+    <br>
     <div class="row">
 
-        <div class="col-sm-6 col-md-3" ng-repeat="item in products">
+        <div class="col-md-3" ng-repeat="item in products           |greaterThan:searchByPrice
+          |filter:{category:searchByCategory}
+          |orderBy:sortByPrice?'-price':'price'">
+
             <div class="thumbnail">
-                <img src="{{::item.imageUrl}}" alt="Generic placeholder thumbnail">
+                <img src="{{item.imageUrl}}" alt="Generic placeholder thumbnail">
             </div>
 
             <div class="caption">
-                <p>Category:{{::item.category}}</p>
+                <p>Category:{{item.category}}</p>
                 <p>
                     <a href="#" class="btn btn-primary" role="button">
-               {{::item.price}}
+               {{item.price}}
             </a>
 
                     </a>
