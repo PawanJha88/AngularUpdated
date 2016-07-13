@@ -1,6 +1,11 @@
 angular.module("home")
-    .controller("homeCtrl", ["$scope", function ($scope) {
+    .controller("homeCtrl", ["$scope", "$rootScope", function ($scope, $rootScope) {
 
+        $scope.addToCart = function (product) {
+            $rootScope.$broadcast("PRODUCTADDED", {
+                item: product
+            });
+        };
         $scope.products = [
             {
                 imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJLr9uWKGkyjpZlV0buePwoxD7CvYcV8nL0Bc2hwFwYsxeK3UuFw",

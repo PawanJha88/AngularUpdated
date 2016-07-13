@@ -3,7 +3,7 @@ angular.module("flipzon")
         $scope.companyName = "FlipZon";
         $scope.navBarUrl = 'app/common/navbar.html';
         $scope.contentUrl = "app/home/home.html";
-
+        $scope.cartItems = [];
         $scope.loadContent = function (name) {
             if (name == 'login') {
                 $scope.contentUrl = "app/login/login.html"
@@ -11,6 +11,8 @@ angular.module("flipzon")
                 $scope.contentUrl = "app/register/register.html"
             } else if (name == "users") {
                 $scope.contentUrl = "app/users/users.html"
+            } else if (name == 'cart') {
+                $scope.contentUrl = 'app/common/checkout.html';
             } else {
                 $scope.contentUrl = "app/home/home.html";
             }
@@ -24,6 +26,9 @@ angular.module("flipzon")
             console.log(oldVal);
         });
 
+        $scope.$on("PRODUCTADDED", function (evt, args) {
+            $scope.cartItems.push(args.item);
+        });
 
 
 
